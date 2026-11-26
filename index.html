@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitoramento de Motores Industriais - v1.0.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Barra superior inspirada na identidade visual WEG -->
+  <header class="top-header">
+    <div class="container header-content">
+      <div class="brand-group">
+        <div class="weg-badge" aria-label="Identidade WEG">WEG</div>
+        <div>
+          <p class="system-kicker">TELEMETRIA &amp; DIAGNÓSTICO INDUSTRIAL</p>
+          <h1 class="system-title">Monitoramento de Motores Industriais <span class="version-tag">v1.0.0</span></h1>
+        </div>
+      </div>
+
+      <div class="header-meta">
+        <div class="status-pill">
+          <span class="pulse-dot"></span>
+          <span>SISTEMA ATIVO</span>
+        </div>
+        <div class="timestamp-box">
+          <span class="meta-label">Data/Hora da leitura</span>
+          <strong id="data-hora-leitura" class="mono">26/11/2026 13:50:00</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <!-- Parâmetros de LIMITES definidos no script Python -->
+    <section class="limits-bar" aria-label="Limites operacionais configurados">
+      <div class="limits-title">
+        <span>LIMITES OPERACIONAIS</span>
+        <small>Regras de alerta do motor Python</small>
+      </div>
+      <div class="limits-grid">
+        <div class="limit-chip">
+          <span>Temp. Máx.</span>
+          <strong class="mono">80.0 °C</strong>
+        </div>
+        <div class="limit-chip">
+          <span>Corrente Máx.</span>
+          <strong class="mono">18.5 A</strong>
+        </div>
+        <div class="limit-chip">
+          <span>Vibração Máx.</span>
+          <strong class="mono">4.5 mm/s</strong>
+        </div>
+        <div class="limit-chip">
+          <span>RPM Mín.</span>
+          <strong class="mono">1400 RPM</strong>
+        </div>
+        <div class="limit-chip">
+          <span>RPM Máx.</span>
+          <strong class="mono">1800 RPM</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo estatístico (calcular_estatisticas) -->
+    <section class="kpi-grid" aria-label="Resumo estatístico dos motores">
+      <article class="kpi-card">
+        <span class="kpi-label">Total de Motores</span>
+        <strong id="kpi-total" class="kpi-value mono">4</strong>
+        <span class="kpi-sub">Leituras válidas</span>
+      </article>
+
+      <article class="kpi-card">
+        <span class="kpi-label">Temp. Média</span>
+        <strong id="kpi-temp-media" class="kpi-value mono">72.58 °C</strong>
+        <span class="kpi-sub">Limite: 80.0 °C</span>
+      </article>
+
+      <article class="kpi-card">
+        <span class="kpi-label">Corrente Média</span>
+        <strong id="kpi-corrente-media" class="kpi-value mono">15.70 A</strong>
+        <span class="kpi-sub">Limite: 1
